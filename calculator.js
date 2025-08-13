@@ -30,8 +30,8 @@ function maxFind(num1, num2, num3) {
 function minFind(num1, num2, num3) {
     return Math.min(num1, num2, num3);
 }
-function randomNum
 /*
+function randomNum
 
 function customRound
 */
