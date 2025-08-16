@@ -11,8 +11,8 @@
 ● Round 23.67891 to 2 decimal places. 
 */
 
-function absoluteValue(num1, num2) {
-    return Math.abs(num1 - num2);
+function absoluteValue(num1) {
+    return Math.abs(num1);
 }
  
 function powerCalc(num1, num2) {
@@ -30,13 +30,18 @@ function maxFind(num1, num2, num3) {
 function minFind(num1, num2, num3) {
     return Math.min(num1, num2, num3);
 }
-/*
-function randomNum
 
-function customRound
-*/
-console.log(absoluteValue(4, 9));
+function randomNum(min, max) {
+    return Math.random() * (max - min) + min;
+}
+function customRound(num1) {
+    return Math.round(num1 * 100)/100
+}
+
+console.log(absoluteValue(-45.67));
 console.log(powerCalc(5, 3));
-console.log(squareRoot(9));
-console.log(maxFind(1, 8, 4));
-console.log(minFind(10, 5, 9));
+console.log(squareRoot(144));
+console.log(maxFind(3, 78, -12, 0.5, 27));
+console.log(minFind(3, 78, -12, 0.5, 27));
+console.log(randomNum(1, 50));
+console.log(customRound(23.67891))
