@@ -41,7 +41,8 @@ let calculations = {
         return Math.round(num1 * 100)/100
     }
 };
-for (let key in calculations) {
+
+/*for (let key in calculations) {
     if (key === 'absoluteValue') {
 }}
 // powerCalc, squareRoot, maxFind, minFind, randomNum, customRound */
@@ -55,27 +56,43 @@ console.log(calculations.minFind(3, 78, -12, 0.5, 27));
 console.log(calculations.randomNum(1, 50));
 console.log(calculations.customRound(23.67891))
 */
-
-let num1 = 1
-let num2 = 2
-let num3 = 3
-let min = 4
-let max = 5
 let singleNumberCalculationChoice = ['absoluteValue', 'squareRoot', 'customRound'];
-let doubleNumberCalculationChoice = ['powerCalc', 'maxFind', 'minFind', 'randomNum'];
-
+let doubleNumberCalculationChoice = ['powerCalc', 'randomNum'];
+let moreThanTwoNumbersChoice = ['maxFind', 'minFind']
+let num1;
+let num2;
+let num3;
+let result;
 const welcomeMessage = readline.question(`Welcome student, are you ready to start your caluclations, click enter to start!\n`); 
-
-let calculationChoicePrompt = readline.question(`Please select your math method, we have: absoluteValue\npowerCalc,\nsquareRoot,\nmaxFind,\nminFind,\nrandomNum,\ncustomRound\nPlease select one.\n`); /* Used the multi-line strings from the STRINGING CHARACTERS AND STRINGS section to present the user with two options for a journey path */
-    while (!calculations[calculationChoicePrompt]) {
+let method = readline.question('Please select your math method, we have:\nabsoluteValue\npowerCalc,\nsquareRoot,\nmaxFind,\nminFind,\nrandomNum,\ncustomRound\nPlease select one.\n');
+    while (!calculations[method]) {
         console.log('This is not a valid choice, please select a valid choice\n');
-        calculationChoicePrompt = readline.question(`Please select your math method.\n`)
-    } 
-    if(!doubleNumberCalculationChoice[calculationChoicePrompt]) {
-        console.log('There is only one number needed for your calculation')
-    }    
+        method = readline.question(`Please select your math method.\n`)
+    }
+    
+    if (method === 'absoluteValue') {
+        num1 = parseFloat(readline.question('Enter your number\n'));
+        result = calculations[method](num1);
+        console.log(`Result: ${result}`);
+    }
 
-let firstNumberInput = readline.question('Enter your first number\n')
+
+/*let calculationChoicePrompt = readline.question(`Please select your math method, we have:\nabsoluteValue\npowerCalc,\nsquareRoot,\nmaxFind,\nminFind,\nrandomNum,\ncustomRound\nPlease select one.\n`); */ // Used the multi-line strings from the STRINGING CHARACTERS AND STRINGS section to present the user with two options for a journey path 
+
+/*
+    if (doubleNumberCalculationChoice.includes(method)) {
+    num2 = parseFloat(readline.question('Enter your seond number'));
+    }
+    if (moreThanTwoNumbersChoice.includes(method)) {
+    num3 = parseFloat(readline.question('Enter your other number'));
+    }
+    if (calculationChoicePrompt === 'absoluteValue') {
+        console.log('There is only one number needed for your calculation\n')
+        calculationChoicePrompt = readline.question('');
+    }  
+*/
+/*
+    let firstNumberInput = readline.question('Enter your first number\n')
     while(isNaN(firstNumberInput)) {
         firstNumberInput = readline.question('This is not a number, please input the correct data Thank you\n')
     }
